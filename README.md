@@ -9,7 +9,7 @@ Requirements
 * PHP 5.3.2+
 * Pimple (https://github.com/fabpot/Pimple)
 
-Pimple availability can be achieved using Composer Loader by adding the following line to your composer.json:
+Pimple availability can be achieved using Composer Loader (https://github.com/korstiaan/composer_loader) by adding the following line to your composer.json:
 
 ``` json
 {
@@ -79,7 +79,7 @@ function foo_drimple_provide(\Drimple\Drimple $drimple)
 {
 	$drimple->register(new \Foo\Provider\DBProvider(), array(
 		'database.options' 	=> array(
-			'dsn'		=> 'mysql:dbname=drupal;host=127.0.0.1',
+			'dsn'		=> 'mysql:dbname=drupal;host=localhost',
 			'user'		=> 'root',
 			'password' 	=> 'root',
 		),
