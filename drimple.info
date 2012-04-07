@@ -1,0 +1,6 @@
+name 		= "Drimple"
+package 	= "Drimple"
+description = "Pimple DIC for Drupal"
+core 		= "7.x"
+dependencies[] 	= composer_loader
+php 			= 5.3.2
