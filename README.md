@@ -113,3 +113,9 @@ class DBProvider implements ServiceProviderInterface
 	}
 }
 ```  
+
+Service Providers
+--------------------------------
+For a list of Drimple compatible service providers see:
+
+https://github.com/korstiaan/droctrine_mongo/wiki/Providers
