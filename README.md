@@ -1,6 +1,8 @@
 Drimple for Drupal 7.x
 ========================
 Module which adds a Dependency Injection Container using Pimple (https://github.com/fabpot/Pimple) to Drupal. 
+
+[![Build Status](https://secure.travis-ci.org/korstiaan/drimple.png?branch=tests)](http://travis-ci.org/korstiaan/drimple)
  
 Requirements
 --------------------------------
