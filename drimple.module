@@ -1,29 +1,27 @@
 <?php
+
 /**
- *  Drimple
- *  Copyright (C) 2012  Korstiaan de Ridder <korstiaan [at] korstiaan.com>
+ * This file is part of Drimple
  *
- *	This file is part of Drimple
+ * (c) Korstiaan de Ridder <korstiaan@korstiaan.com>
  *
- *  Drimple is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Drimple is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with Drimple.  If not, see <http://www.gnu.org/licenses/>.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
-function drimple_init()
+/**
+ * @return \Drimple\Drimple
+ */
+function drimple()
 {
-	if (!class_exists('\Drimple\Drimple')) {
-		require __DIR__.'/Drimple/Drimple.php';
-		require __DIR__.'/Drimple/Provider/ServiceProviderInterface.php';	
+	static $drimple = null;
+	if (null === $drimple) {
+		if (!class_exists('\Drimple\Drimple')) {
+			require __DIR__.'/src/Drimple/Drimple.php';
+			require __DIR__.'/src/Drimple/Provider/ServiceProviderInterface.php';	
+		}
+		$drimple = new \Drimple\Drimple();
+		module_invoke_all('drimple_provide', $drimple);
 	}
-	module_invoke_all('drimple_provide', \Drimple\Drimple::getInstance());
+	return $drimple;
 }

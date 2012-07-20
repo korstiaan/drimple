@@ -1,0 +1,58 @@
+#!/usr/bin/env php
+<?php
+define('DRUPAL_ROOT',realpath(__DIR__.'/../../vendor/drupal/drupal'));
+
+if (!is_dir(DRUPAL_ROOT)) {
+	throw new \RuntimeException('Drupal not found, unable to install');
+}
+
+chdir(DRUPAL_ROOT);
+
+require DRUPAL_ROOT.'/includes/install.core.inc';
+$db = __DIR__.'/../baseline/drupal.db';
+
+if (file_exists($db)) {
+	unlink($db);
+}
+
+$GLOBALS['databases'] = array(
+	'default' => array(
+		'default' => array(
+			'driver' 	=> 'sqlite',
+			'database' 	=> $db,
+		),
+	),
+);
+
+define('MAINTENANCE_MODE', 'install');
+
+$settings = array(
+	'interactive'				=> false,
+	'database_tables_exist' 	=> false,	
+	'locales'					=> array(),
+	'profiles'					=> array('minimal'),
+	'parameters'				=> array (
+		'locale' 					=> 'nl',
+		'profile'					=> 'minimal',
+	),
+	'forms'						=> array(
+		'install_configure_form'	=> array(
+			'site_name'					=> 'drimple_test',
+			'site_mail'					=> 'drimple_test@example.com',
+			'account'					=> array(
+				'name'						=> 'drimple_test',
+				'mail'						=> 'drimple_test@example.com',
+				'pass'						=> array(
+					'pass1'						=> 'drimple_test',
+					'pass2'						=> 'drimple_test',
+				),
+			),
+			'site_default_country'		=> 'NL',
+			'date_default_timezone'		=> 'Europe/Amsterdam',
+			'update_status_module'		=> array(),	
+			'clean_url'					=> 1,
+		),		
+	),
+);
+
+install_drupal($settings);

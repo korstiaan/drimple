@@ -1,0 +1,40 @@
+{
+	"name": "korstiaan/drimple",
+    "description": "Module which adds a Dependency Injection Container using Pimple to Drupal 7.x.",
+    "homepage": "http://korstiaan.com/drimple",
+    "autoload": {
+        "psr-0": {
+        	"Drimple": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Korstiaan de Ridder",
+            "email": "korstiaan@korstiaan.com",
+            "homepage": "http://www.korstiaan.com"
+        }
+    ],
+    "repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name" : "drupal/drupal",
+				"version" : "7.10",
+				"source" : {
+					"url" : "https://github.com/drupal/drupal",
+					"type" : "git",
+					"reference" : "7.10"
+				}
+			}
+		}
+    ],
+    "type": "drupal-module",
+    "minimum-stability": "dev",
+    "require": {
+    	"pimple/pimple": "1.0.0",
+    	"composer/installers": "*"     	 
+    },
+    "require-dev": {
+    	"drupal/drupal": "*"     	 
+    }
+}

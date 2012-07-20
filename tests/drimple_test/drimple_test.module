@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * This file is part of Drimple
+ *
+ * (c) Korstiaan de Ridder <korstiaan@korstiaan.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
+
+function drimple_test_drimple_provide(\Drimple\Drimple $drimple)
+{
+	$drimple->register(new DrimpleTestProvider());	
+}
+
+class DrimpleTestProvider implements \Drimple\Provider\ServiceProviderInterface 
+{
+	public function register(\Drimple\Drimple $container)
+	{
+		$container['foo'] = 'bar';
+	}	
+}
