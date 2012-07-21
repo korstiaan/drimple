@@ -15,5 +15,5 @@ use Drimple\Drimple;
 
 interface ServiceProviderInterface
 {
-	public function register(Drimple $container);
+    public function register(Drimple $container);
 }
