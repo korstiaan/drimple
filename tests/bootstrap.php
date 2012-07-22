@@ -13,5 +13,10 @@ use Drunit\Drunit;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+if (!class_exists('Drunit\\Drunit')) {
+    throw new \RuntimeException('Drunit not found, make sure you have installed all dependencies (--dev)');
+}
+
 Drunit::bootstrap();
-Drunit::enableModule(__DIR__.'/../', array('drimple','drimple_test'));
+Drunit::enableModule(__DIR__.'/../module', array('drimple'));
+Drunit::enableModule(__DIR__.'/../tests/drimple_test', array('drimple_test'));

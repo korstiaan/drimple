@@ -18,6 +18,10 @@ class DrupalTest extends \PHPUnit_Framework_TestCase
         if (!defined('DRUPAL_ROOT')) {
             $this->markTestSkipped('Drupal needs to be bootstrapped for this test');
         }
+        
+        if (!function_exists('drimple')) {
+            $this->markTestSkipped('Drupal needs to be bootstrapped and modules enabled');
+        }
     }
     public function testSingleton()
     {

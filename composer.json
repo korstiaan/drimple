@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "Drimple": ""
+            "Drimple": "module"
         }
     },   
     "require": {
