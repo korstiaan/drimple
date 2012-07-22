@@ -13,6 +13,12 @@ namespace Drimple\Tests;
 
 class DrupalTest extends \PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        if (!defined('DRUPAL_ROOT')) {
+            $this->markTestSkipped('Drupal needs to be bootstrapped for this test');
+        }
+    }
     public function testSingleton()
     {
         $drimple1 = \Drimple\Drimple::getInstance();

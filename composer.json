@@ -11,20 +11,6 @@
             "homepage": "http://www.korstiaan.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "drupal/drupal",
-                "version": "7.10",
-                "source": {
-                    "url": "https://github.com/drupal/drupal",
-                    "type": "git",
-                    "reference": "7.10"
-                }
-            }
-        }
-    ],
     "type": "drupal-module",
     "minimum-stability": "dev",
     "autoload": {
@@ -38,6 +24,6 @@
         "composer/installers": "*"          
     },
     "require-dev": {
-        "drupal/drupal": "*" 
+        "korstiaan/drunit": "*"
     }
 }

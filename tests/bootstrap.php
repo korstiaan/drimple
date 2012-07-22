@@ -8,5 +8,10 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+
+use Drunit\Drunit;
+
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/drupal_bootstrap.php';
+
+Drunit::bootstrap();
+Drunit::enableModule(__DIR__.'/../', array('drimple','drimple_test'));
