@@ -17,9 +17,10 @@ Just add the following to your `composer.json`:
 
 ```json
    {
+   	   "minimum-stability": "dev",
 	   "require": {
 	   	   ...
-		   "korstiaan/drimple": "*"
+		   "korstiaan/drimple": "dev-master"
 	   }
    }
 ```
@@ -29,6 +30,9 @@ Now update composer and install the newly added requirement and its dependencies
 ``` bash
 $ php composer.phar update korstiaan/drimple
 ```
+
+If all went well and `composer/installers` did its job, `Drimple` was installed to `modules/drimple`. 
+If you don't want it there, or it's not part of your Drupal rootdir, symlink it to your folder of choice.   
 
 Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modules/list`.
 
