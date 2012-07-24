@@ -130,11 +130,11 @@ class DBProvider implements ServiceProviderInterface
 	}
 }
 ```  
-# Providers
+## Providers
 
 See the [wiki](https://github.com/korstiaan/drimple/wiki/Providers)
 
-# License
+## License
 
 Drimple is licensed under the MIT license.
 
