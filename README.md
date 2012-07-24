@@ -1,6 +1,6 @@
 # Drimple for Drupal 7.x
 
-Module which adds a Dependency Injection Container using Pimple (https://github.com/fabpot/Pimple) to Drupal. 
+Module which adds a Dependency Injection Container using [Pimple](https://github.com/fabpot/Pimple) to Drupal. 
 
 [![Build Status](https://secure.travis-ci.org/korstiaan/drimple.png?branch=master)](http://travis-ci.org/korstiaan/drimple)
  
@@ -38,7 +38,7 @@ Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modu
 
 Using `Composer` means enabling its autoloader. This can be done in 2 days:
 
-1. Require _autoload.php_ in _settings.php_ (recommended) 
+* Require _autoload.php_ in _settings.php_ (recommended) 
 
 Add the following to your Drupals settings.php:
 
@@ -48,7 +48,7 @@ Add the following to your Drupals settings.php:
 require '/path/to/vendor/autoload.php';
 ```
 
-2. Use [composer_loader](https://github.com/korstiaan/composer_loader)
+* Use [composer_loader](https://github.com/korstiaan/composer_loader)
 
 Just follow its readme.
 
