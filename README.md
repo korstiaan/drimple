@@ -1,45 +1,46 @@
-Drimple for Drupal 7.x
-========================
+# Drimple for Drupal 7.x
+
 Module which adds a Dependency Injection Container using Pimple (https://github.com/fabpot/Pimple) to Drupal. 
 
 [![Build Status](https://secure.travis-ci.org/korstiaan/drimple.png?branch=tests)](http://travis-ci.org/korstiaan/drimple)
  
-Requirements
---------------------------------
+## Requirements
 
 * Drupal 7.x
-* PHP 5.3.2+
-* Pimple (https://github.com/fabpot/Pimple)
+* PHP 5.3.3+
+* [Pimple](https://github.com/fabpot/Pimple)
 
-Pimple availability can be achieved using Composer Loader (https://github.com/korstiaan/composer_loader) by adding the following line to your composer.json:
+## Installation
 
-``` json
-{
-	"require": {
-	    "pimple/pimple": "dev-master",
-	}
-}
+The recommended way to install `Drimple` is with [Composer](http://getcomposer.org). 
+Just add the following to your `composer.json`:
+
+```json
+   {
+	   "require": {
+	   	   ...
+		   "korstiaan/drimple": "*"
+	   }
+   }
 ```
 
-Autoloading
---------------------------------
+Now update composer and install the newly added requirement and its dependencies (including `Pimple`):
 
-Suggested is using nsautoload (https://github.com/korstiaan/nsautoload) for autoloading your custom service / provider classes.
+``` bash
+$ php composer.phar update korstiaan/drimple
+```
 
-Usage
---------------------------------
+Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modules/list`.
 
-Install it as a normal Drupal module. This means downloading (or git clone'ing) it to site/all/modules and enabling it on "admin/modules/list".
-(If you're using voiture (http://voiture.hoppinger.com) just add "drimple" to cnf/shared/modules.php)
+(If you're using [voiture](http://voiture.hoppinger.com) just add `drimple` to `cnf/shared/modules.php`)
 
-Drimple's container can then be retrieved as singleton via \Drimple\Drimple::getInstance().
+## Usage
 
-Adding services
---------------------------------
+`Drimple`s container and its services can then be retrieved as singleton via `drimple()` or `\Drimple\Drimple::getInstance()`.
+
+### Adding services
  
-Recommended way of adding services is by adding them in hook_drimple_provide(\Drimple\Drimple $drimple)
-
-Example:
+Recommended way of adding services is by implementing `hook_drimple_provide(\Drimple\Drimple $drimple)`:
 
 ```php
 <?php
@@ -66,10 +67,9 @@ function foo_drimple_provide(\Drimple\Drimple $drimple)
 }
 ```
 
-Service providers
---------------------------------  
-
-Just like Silex (http://silex.sensiolabs.org/doc/providers.html) you can also add services to Drimple using Service Providers. 
+## Service providers
+  
+Just like [Silex](http://silex.sensiolabs.org/doc/providers.html) you can also add services to `Drimple` by registering `Service Providers`. 
 
 Example:
 
@@ -87,10 +87,7 @@ function foo_drimple_provide(\Drimple\Drimple $drimple)
 		),
 	));
 }
-```
 
-```php
-<?php
 // sites/all/modules/foo/Foo/Provider/DBProvider.php
 namespace Foo\Provider;
 
@@ -116,8 +113,7 @@ class DBProvider implements ServiceProviderInterface
 }
 ```  
 
-Service Providers
---------------------------------
-For a list of Drimple compatible service providers see:
+# License
 
-https://github.com/korstiaan/droctrine_mongo/wiki/Providers
+Drimple is licensed under the MIT license.
+
