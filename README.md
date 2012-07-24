@@ -36,7 +36,7 @@ Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modu
 
 ### Using Composer
 
-Using `Composer` means enabling its autoloader. This can be done in 2 days:
+Using `Composer` means enabling its autoloader. This can be done in 2 ways:
 
 * Require _autoload.php_ in _settings.php_ (recommended) 
 
