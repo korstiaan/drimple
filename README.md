@@ -34,6 +34,24 @@ Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modu
 
 (If you're using [voiture](http://voiture.hoppinger.com) just add `drimple` to `cnf/shared/modules.php`)
 
+### Using Composer
+
+Using `Composer` means enabling its autoloader. This can be done in 2 days:
+
+1. Require _autoload.php_ in _settings.php_ (recommended) 
+
+Add the following to your Drupals settings.php:
+
+```php
+// /path/to/sites/default/settings.php
+
+require '/path/to/vendor/autoload.php';
+```
+
+2. Use [composer_loader](https://github.com/korstiaan/composer_loader)
+
+Just follow its readme.
+
 ## Usage
 
 `Drimple`s container and its services can then be retrieved as singleton via `drimple()` or `\Drimple\Drimple::getInstance()`.
