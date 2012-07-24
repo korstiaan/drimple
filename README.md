@@ -130,6 +130,9 @@ class DBProvider implements ServiceProviderInterface
 	}
 }
 ```  
+# Providers
+
+See the [wiki](https://github.com/korstiaan/drimple/wiki/Providers)
 
 # License
 
