@@ -40,21 +40,13 @@ Next go to `site/all/modules` and enable it on `http://yourdomain.com/admin/modu
 
 ### Using Composer
 
-Using `Composer` means enabling its autoloader. This can be done in 2 ways:
-
-* Require _autoload.php_ in _settings.php_ (recommended) 
-
-Add the following to your Drupals settings.php:
+Using `Composer` means including its autoloader. Add the following to your Drupals settings.php:
 
 ```php
 // /path/to/sites/default/settings.php
 
 require '/path/to/vendor/autoload.php';
 ```
-
-* Use [composer_loader](https://github.com/korstiaan/composer_loader)
-
-Just follow its readme.
 
 ## Usage
 
