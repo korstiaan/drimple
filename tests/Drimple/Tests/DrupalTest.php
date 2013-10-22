@@ -11,18 +11,17 @@
 
 namespace Drimple\Tests;
 
-class DrupalTest extends \PHPUnit_Framework_TestCase
+use Drunit\TestCase;
+
+use Drunit\Drunit;
+class DrupalTest extends TestCase
 {
     public function setUp()
     {
-        if (!defined('DRUPAL_ROOT')) {
-            $this->markTestSkipped('Drupal needs to be bootstrapped for this test');
-        }
-        
-        if (!function_exists('drimple')) {
-            $this->markTestSkipped('Drupal needs to be bootstrapped and modules enabled');
-        }
+        parent::setUp();
+        Drunit::enableModule(__DIR__.'/../../../module', array('drimple'));
     }
+
     public function testSingleton()
     {
         $drimple1 = \Drimple\Drimple::getInstance();
@@ -43,6 +42,7 @@ class DrupalTest extends \PHPUnit_Framework_TestCase
 
     public function testProvideHook()
     {
+        Drunit::enableModule(__DIR__.'/../../drimple_test', array('drimple_test'));
         $drimple = drimple();
 
         $this->assertSame('bar',$drimple->get('foo'));

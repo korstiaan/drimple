@@ -13,6 +13,24 @@
     ],
     "type": "drupal-module",
     "minimum-stability": "dev",
+    "repositories": [
+        {
+           "type": "package",
+           "package": {
+               "version": "7.23",
+               "name": "drupal/core",
+               "source": {
+                   "url": "http://git.drupal.org/project/drupal.git",
+                   "type": "git",
+                   "reference": "7.23"
+               },
+               "dist": {
+                   "url": "http://ftp.drupal.org/files/projects/drupal-7.23.zip",
+                   "type": "zip"
+               }
+           }
+       }
+    ],
     "autoload": {
         "psr-0": {
             "Drimple": "module"
@@ -25,5 +43,13 @@
     },
     "require-dev": {
         "korstiaan/drunit": "*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Drunit\\Composer\\ScriptHandler::installDrupal"
+        ],
+        "post-update-cmd": [
+            "Drunit\\Composer\\ScriptHandler::installDrupal"
+        ]
     }
 }
